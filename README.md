@@ -1,5 +1,9 @@
 ﻿# AI-Friendly Project Template
 
+<p align="right">
+  <strong>English</strong> | <a href="./README_CN.md">中文</a>
+</p>
+
 This repository is a learning template for building **AI-friendly software projects**. Its goal is not only to provide a demo app, but also to show how to organize project knowledge so tools like Codex and Claude Code can understand the project, follow constraints, and produce more reliable code.
 
 The core idea is simple:

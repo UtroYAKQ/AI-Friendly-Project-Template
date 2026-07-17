@@ -1,5 +1,9 @@
 ﻿# AI 友好项目模板
 
+<p align="right">
+  <strong>中文</strong> | <a href="./README.md">English</a>
+</p>
+
 这个仓库是一个用于学习如何构建 **AI 友好项目** 的模板。它不只是提供一个 demo 应用，更重要的是展示如何组织项目知识，让 Codex、Claude Code 等 AI 编程工具能更准确地理解项目、遵守约束，并写出更贴近项目风格的代码。
 
 核心思想很简单：
