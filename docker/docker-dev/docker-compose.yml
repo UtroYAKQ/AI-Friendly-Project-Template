@@ -1,0 +1,30 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: demo
+      POSTGRES_USER: demo
+      POSTGRES_PASSWORD: demo
+    ports:
+      - "5432:5432"
+    volumes:
+      - demo_dev_pg:/var/lib/postgresql/data
+
+  backend:
+    image: node:22-alpine
+    working_dir: /workspace/apps/demo-backend
+    command: sh -c "npm install && npm run dev"
+    environment:
+      NODE_ENV: development
+      PORT: 3000
+      DATABASE_URL: postgres://demo:demo@postgres:5432/demo
+      JWT_SECRET: dev-only-secret
+    ports:
+      - "3000:3000"
+    volumes:
+      - ../..:/workspace
+    depends_on:
+      - postgres
+
+volumes:
+  demo_dev_pg:
