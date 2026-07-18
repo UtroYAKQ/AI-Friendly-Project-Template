@@ -1,35 +1,47 @@
-﻿# Codex Project Guide
+# Codex 项目指南
 
-This file is the Codex-specific project guide.
+本文件是 Codex 专属的项目指南。
 
-Codex should treat the documentation in `docs/` as the product contract and keep code, tests, and docs synchronized.
+Codex 应将 `docs/` 目录下的文档视为产品契约，保持代码、测试和文档同步。
 
-## Required Reading Order
+## 必读顺序
 
-1. `README.md` - project purpose and quick start.
-2. `docs/ai-guide.md` - shared product and engineering workflow.
-3. `docs/architecture.md` - system boundaries and dependencies.
-4. `docs/api-contracts.md` - HTTP contracts and response shape.
-5. `docs/coding-standards.md` - naming, layering, and implementation rules.
-6. Relevant app README under `apps/*/README.md`.
+1. `README.md` — 项目目的和快速入门
+2. `docs/ai-guide.md` — 如何阅读和更新项目文档
+3. `docs/tech-stack.md` — 技术选型和约束
+4. `docs/architecture.md` — 系统边界和依赖关系
+5. `docs/modules/` — 各模块的设计和职责文档
+6. `docs/business-flow.md` — 用户流程和验收条件
+7. `docs/api-contracts/` — HTTP 契约和响应格式
+8. `docs/database-schema.md` — 数据表、所有权和迁移规则
+9. `docs/coding-standards.md` — 命名、分层和实现规范
+10. `docs/frontend-design.md` — 前端组件和样式约定
+11. `docs/testing.md` — 测试策略和命令
+12. `docs/security.md` — 认证、授权和 AI 安全约束
+13. `docs/deployment.md` — 环境、环境变量和部署检查清单
 
-## Working Rules
+## 工作规则
 
-- Prefer small, focused changes over broad rewrites.
-- Update docs when behavior, APIs, env vars, schemas, or commands change.
-- Do not introduce new frameworks unless the task explicitly requires it.
-- Do not hard-code secrets, tokens, passwords, or environment-specific URLs.
-- Keep examples runnable or clearly marked as template examples.
-- Use consistent response envelopes for APIs: `success`, `data`, `error`, `meta`.
-- Keep Codex-specific behavior in this file or `.codex/` files.
+- 优先小步变更，避免大范围重写
+- 行为、API、环境变量、数据表结构或命令变更时，同步更新文档
+- 除非任务明确要求，否则不引入新框架
+- 不在代码中硬编码密钥、token、密码或环境相关 URL
+- 保持示例代码可运行，或明确标注为模板示例
+- API 使用统一响应信封：`success`、`data`、`error`、`meta`
+- Codex 专属行为写在本文件或 `.codex/` 目录下
 
-## Verification
+## 决策记录
 
-- For docs-only changes, check links, paths, and examples for consistency.
-- For backend changes, run the narrowest available backend tests first.
-- For frontend changes, run the narrowest available frontend tests first.
-- If a validation command is unavailable, mention it in the final response.
+在做影响架构的修改之前，先阅读 `docs/decisions/` 目录下相关的决策记录。
+理解已有决策的原因。如果新方案与已有决策冲突，先与用户讨论。
 
-## Demo Domain
+## 验证
 
-The default demo domain is a Todo app with users and tasks. Use it to show authentication, authorization, CRUD, validation, pagination, error handling, and deployment conventions.
+- 仅文档变更时，检查链接、路径和示例的一致性
+- 后端变更时，优先运行最相关的后端测试
+- 前端变更时，优先运行最相关的前端测试
+- 如果验证命令不可用，在最终回复中说明
+
+## Demo 领域
+
+默认 Demo 是一个带用户和任务的 Todo 应用。用它来展示认证、授权、CRUD、校验、分页、错误处理和部署的约定。
